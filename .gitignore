@@ -249,6 +249,10 @@ paket-files/
 # FAKE - F# Make
 .fake/
 
+# CAKE
+tools/**
+!tools/packages.config
+
 # JetBrains Rider
 .idea/
 *.sln.iml
