@@ -1,4 +1,5 @@
 #tool "nuget:?package=GitVersion.CommandLine"
+#addin nuget:?package=Cake.Git
 
 var target        = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
@@ -29,12 +30,14 @@ Task("Build")
     );
 });
 
-Task("UpdateAssemblyInfo")
-    .Does(() =>
+Task("Release")
+	.Does(() => 
 {
-    GitVersion(new GitVersionSettings {
+	var version = GitVersion(new GitVersionSettings {
         UpdateAssemblyInfo = true
     });
+	GitAddAll(".");
+	GitCommit(".", "Premysl Krajcovic", "premysl.krajcovic@notino.com", string.Format("Bumped version number to {0}", version.MajorMinorPatch));
 });
 
 Task("Default")
