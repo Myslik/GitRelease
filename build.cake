@@ -40,6 +40,13 @@ Task("Release")
 	GitCommit(".", "Premysl Krajcovic", "premysl.krajcovic@notino.com", string.Format("Bumped version number to {0}", version.MajorMinorPatch));
 });
 
+Task("Get-Release")
+	.Does(() => 
+{
+	var version = GitVersion();
+	Information(version.MajorMinorPatch);
+});
+
 Task("Default")
     .IsDependentOn("Build");
 
