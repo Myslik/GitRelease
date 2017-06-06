@@ -6,7 +6,8 @@ namespace GitRelease.CLI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello world!");
+            var greet = new Greet();
+            Console.WriteLine(greet.Hello("world"));
         }
     }
 }

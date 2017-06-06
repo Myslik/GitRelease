@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assemblies timestamp="06/06/2017 20:27:43">
+  <assembly name="C:\Repos\GitRelease\src\GitRelease.Tests\bin\Release\GitRelease.Tests.DLL" environment="64-bit .NET 4.0.30319.42000 [collection-per-class, parallel (4 threads)]" test-framework="xUnit.net 2.2.0.3545" run-date="2017-06-06" run-time="20:27:43" config-file="C:\Repos\GitRelease\tools\xunit.runner.console\tools\xunit.console.exe.Config" total="1" passed="1" failed="0" skipped="0" time="0.141" errors="0">
+    <errors />
+    <collection total="1" passed="1" failed="0" skipped="0" name="Test collection for GitRelease.Tests.GreetTests" time="0.031">
+      <test name="GitRelease.Tests.GreetTests.GreetHelloWorldTest" type="GitRelease.Tests.GreetTests" method="GreetHelloWorldTest" time="0.0310279" result="Pass" />
+    </collection>
+  </assembly>
+</assemblies>

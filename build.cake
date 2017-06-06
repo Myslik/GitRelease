@@ -1,3 +1,4 @@
+#tool "nuget:?package=xunit.runner.console"
 #tool "nuget:?package=GitVersion.CommandLine"
 #addin nuget:?package=Cake.Git
 
@@ -28,6 +29,14 @@ Task("Build")
         .SetVerbosity(Verbosity.Minimal)
         .UseToolVersion(MSBuildToolVersion.VS2017)
     );
+});
+
+Task("Test")
+    .IsDependentOn("Build")
+    .Does(() =>
+{
+    XUnit2(string.Format("./src/**/bin/{0}/*.Tests.dll", configuration),
+		new XUnit2Settings { OutputDirectory = ".", ReportName = "GitRelease.XUnit", XmlReport = true });
 });
 
 Task("Release")
